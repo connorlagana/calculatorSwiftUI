@@ -15,12 +15,12 @@ struct ContentView: View {
     var body: some View {
         ZStack (alignment: .bottom) {
             Color.black.edgesIgnoringSafeArea(.all)
-            VStack {
+            VStack (spacing: 12) {
                 HStack {
                     Spacer()
                     Text("69").foregroundColor(.white)
                         .font(.system(size: 64))
-                }
+                }.padding(16)
                 
                 ForEach(buttons, id: \.self) { row in
                     HStack {
@@ -30,7 +30,7 @@ struct ContentView: View {
                                 .frame(width: 80, height: 80)
                                 .background(Color.gray)
                                 .clipShape(Circle())
-                                .padding(2)
+                                
                                 .foregroundColor(.white)
                             
                         }
