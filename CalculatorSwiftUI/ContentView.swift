@@ -16,7 +16,7 @@ struct ContentView: View {
         ZStack (alignment: .bottom) {
             Color.black.edgesIgnoringSafeArea(.all)
             VStack (spacing: 12) {
-                HStack {
+                HStack (spacing: 12) {
                     Spacer()
                     Text("69").foregroundColor(.white)
                         .font(.system(size: 64))
@@ -27,7 +27,7 @@ struct ContentView: View {
                         ForEach(row, id: \.self) { button in
                             Text(button)
                                 .font(.system(size: 32))
-                                .frame(width: 80, height: 80)
+                                .frame(width: self.buttonFrame(), height: self.buttonFrame())
                                 .background(Color.gray)
                                 .clipShape(Circle())
                                 
@@ -38,9 +38,14 @@ struct ContentView: View {
                     
                 }
                 
-            }
+            }.padding(.bottom)
         }
         
+    }
+    
+    func buttonFrame() -> CGFloat {
+//        5 gaps between each button
+        return (UIScreen.main.bounds.width - 5 * 12) / 4
     }
 }
 
