@@ -10,12 +10,18 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let buttons = [["AC", "±", "%", "÷"], ["7", "8", "9", "x"], ["4", "5", "6", "-"], ["1", "2", "3", "+"]]
+    let buttons = [["AC", "±", "%", "÷"], ["7", "8", "9", "x"], ["4", "5", "6", "-"], ["1", "2", "3", "+"], ["0", ".", ".", "="]]
     
     var body: some View {
-        ZStack {
+        ZStack (alignment: .bottom) {
             Color.black.edgesIgnoringSafeArea(.all)
             VStack {
+                HStack {
+                    Spacer()
+                    Text("69").foregroundColor(.white)
+                        .font(.system(size: 64))
+                }
+                
                 ForEach(buttons, id: \.self) { row in
                     HStack {
                         ForEach(row, id: \.self) { button in
