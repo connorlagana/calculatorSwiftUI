@@ -31,6 +31,7 @@ enum  CalculatorButton: String {
         case .divide: return "÷"
         case .multiply: return "x"
         case .plusminus: return "±"
+        case .percent: return "%"
         case .ac: return "AC"
         default:
             return "Con"
@@ -52,6 +53,7 @@ enum  CalculatorButton: String {
 struct ContentView: View {
     
     let buttons: [[CalculatorButton]] = [
+        [.ac, .plusminus, .percent, .divide],
         [.seven, .eight, .nine, .multiply],
         [.four, .five, .six, .minus],
         [.one, .two, .three, .plus]
